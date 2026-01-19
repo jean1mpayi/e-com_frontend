@@ -32,10 +32,43 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 # .env*
+.env*
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+
+# Mac system files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Output folders
+dist/
+out/
+build/
+
+# Misc
+*.local
+*.log
+
+# Ignore output from PostCSS
+*.css.map
+
+# Ignore shadcn/ui generated files (if any)
+components.json
+
+# Optional: ignore public/static build assets
+public/static/
+
+# Optional: ignore local data
+*.sqlite
+*.db
 next-env.d.ts
