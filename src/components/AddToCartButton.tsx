@@ -20,7 +20,7 @@ export function AddToCartButton({ product }: { product: any }) {
 
       toast.success(`${product.name} ajouté !`, {
         description: "Le produit a été ajouté à votre panier avec succès.",
-        icon: <CheckCircle2 className="h-5 w-5 text-green-500" />,
+        icon: <CheckCircle2 className=" text-green-500" />,
         action: {
           label: "Voir Panier",
           onClick: () => router.push("/cart"),

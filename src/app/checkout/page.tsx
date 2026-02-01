@@ -26,16 +26,16 @@ export default function CheckoutPage() {
     const formData = new FormData(e.currentTarget);
 
     const orderData = {
-      first_name: user.first_name || user.username,
-      last_name: user.last_name || "",
+      first_name: user.first_name || user.username || "Client",
+      last_name: user.last_name || "Nom",
       email: user.email,
       address: formData.get("address"),
       postal_code: formData.get("postal_code"),
       city: formData.get("city"),
-      total_paid: totalPrice.toFixed(2),
+      total_paid: Number(totalPrice.toFixed(2)),
       items: cart.map(item => ({
         product: item.id,
-        price: item.price.toFixed(2),
+        price: Number(item.price.toFixed(2)),
         quantity: item.quantity
       }))
     };

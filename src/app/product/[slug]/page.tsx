@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { SimilarProducts } from "@/components/SimilarProducts";
 import { ReviewSection } from "@/components/ReviewSection";
+import { AArrowUp } from "lucide-react";
 
 export default async function ProductPage({
   params
@@ -34,7 +35,7 @@ export default async function ProductPage({
           <div className="w-full p-4 md:p-8 space-y-3">
             <div className="space-y-1">
               <div className="inline-block px-3 py-0.5 bg-slate-50 dark:bg-slate-800 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-widest text-slate-400">
-                {product.category.name}
+                {product.category_details?.name}
               </div>
               <h1 className="text-2xl md:text-4xl font-black italic tracking-tighter uppercase text-slate-900 dark:text-white leading-tight">
                 {product.name}
@@ -53,15 +54,15 @@ export default async function ProductPage({
             <div className="pt-1 mt-2 flex justify-end">
 
               <AddToCartButton product={product} />
-
+              
             </div>
           </div>
         </div>
 
-        {/* Similar Products Peek Section - Ultra tight */}
+        <hr />
         <section className="px-1">
           <SimilarProducts
-            categoryId={product.category.id}
+            categoryId={product.category}
             currentProductId={product.id}
           />
         </section>
